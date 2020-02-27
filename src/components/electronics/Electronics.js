@@ -10,7 +10,7 @@ class Electronics extends Component {
         this.state = {
             electronics: []
         }
-        this.componentDidMount = this.componentDidMount.bind(this)
+        this.componentDidMount = this.componentDidMount.bind(this);
     }
 
     componentDidMount(){
@@ -59,7 +59,7 @@ class Electronics extends Component {
                 <div className='product-line'></div>
                 </div>
             )
-        })
+        });
 
         return(
             <section>

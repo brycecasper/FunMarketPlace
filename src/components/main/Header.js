@@ -8,9 +8,15 @@ class Header extends Component {
         super(props);
         this.state = {
             menu: false,
+            searching: false,
             search: '',
             searchResults: []
         }
+        this.componentDidMount = this.componentDidMount.bind(this);
+    }
+
+    componentDidMount(){
+        this.searchFn()
     }
 
     displayMenu = () => {
@@ -32,23 +38,42 @@ class Header extends Component {
     }
 
     setSearch = e => {
-        this.setState({search: e.target.value});
+        this.setState({
+            search: e.target.value,
+            searching: true
+        });
     }
 
     searchFn = () => {
-        const {search} = this.state
-        axios.get('/api/search', {search})
-        .then(res => {this.setState({searchResults: res.data})})
-        .catch(err => console.log(err))
+        const {search} = this.state;
+        if(!search.length){
+            this.setState({
+                searchResults: [],
+                searching: false
+            })
+        } else {
+            axios.post('/api/look', {search})
+            .then(res => {
+                this.setState({searchResults: res.data})
+            })
+            .catch(err => console.log(err))
+        }
     }
 
     render(){
-        const {menu} = this.state;
+        const {menu, searchResults, searching} = this.state;
+        const mappedSearchResults = searchResults.map((products, i) => {
+            return(
+                <div key={i}>
+                    <img src={products.img} alt={products.name} className='search-img' />
+                    <div className='search-name'>{products.name}</div>
+                </div>
+            )
+        });
 
         return(
             <section className='header-main'>
                 <menu>
-
                 {
                     menu
                     ?
@@ -62,14 +87,25 @@ class Header extends Component {
                         <div className='bar'></div>
                     </button>
                 }
-
                 </menu>
 
+                <div className='flex-search'>
                 <input className='search-bar' placeholder='search' 
-                    value={this.state.search} onChange={this.setSearch} onKeyPress={() => this.searchFn()}
+                    value={this.state.search} onChange={this.setSearch} onKeyPress={() => this.componentDidMount()}
                 />
 
-                <div>{this.state.searchResults}</div>
+                <div>
+                {
+                    searching
+                    ?
+                    <div className='search-results'>
+                    {mappedSearchResults}
+                    </div>
+                    :
+                    null
+                }
+                </div>
+                </div>
 
                 <div className='header-options'>
                     <span> <Link to='/homemain' className='link'> Home </Link> </span>

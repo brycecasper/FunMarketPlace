@@ -1,2 +1,2 @@
 select * from products
-where name like '%@search%';
+where name ilike '%' || $1 || '%';

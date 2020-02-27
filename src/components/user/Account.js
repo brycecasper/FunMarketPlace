@@ -37,8 +37,8 @@ const Account = props => {
     )
 }
 
-const mapStateToProps = reduxState => {
-    return reduxState;
+const mapStateToProps = state => {
+    return state
 }
 
 export default connect(mapStateToProps, {getUser})(Account);

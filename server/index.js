@@ -95,7 +95,7 @@ app.get('/api/electronics', productsCtrl.getElectronics);
 app.get('/api/clothing', productsCtrl.getClothing);
 app.get('/api/home', productsCtrl.getHome);
 app.get('/api/outdoor', productsCtrl.getOutdoor);
-app.get('/api/search', productsCtrl.search);
+app.post('/api/look', productsCtrl.search);
 
 //MUSIC
 app.get('/api/songs', musicCtrl.getSongs);

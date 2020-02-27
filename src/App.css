@@ -137,11 +137,37 @@
   color: burlywood;
 }
 
+.flex-search {
+  display: flex;
+  flex-direction: column;
+  height: 6vh;
+  z-index: 0;
+}
+
 .search-bar {
   height: 3vh;
   width: 30vw;
   padding: 1%;
   font-size: large;
+}
+
+.search-img {
+  height: 50px;
+  width: 70px;
+  border: 2px solid burlywood;
+}
+
+.search-name {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 2vh;
+}
+
+.search-results {
+  height: 20vh;
+  width: 30vw;
+  overflow: scroll;
+  margin-top: 3vh;
 }
 
 .header-options {

@@ -26,8 +26,8 @@ module.exports = {
     search: (req, res) => {
         const {search} = req.body;
         const db = req.app.get('db');
-        db.products.search_db({search})
-        .then(result => res.status(200).send(result))
+        db.products.search_db(search)
+        .then(data => res.status(200).send(data))
         .catch(err => res.status(500).send(err))
     }
 }
