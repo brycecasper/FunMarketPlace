@@ -58,7 +58,6 @@ class Outdoor extends Component {
                 </section>
 
                 <div className='product-line'></div>
-                
                 </div>
             )
         })

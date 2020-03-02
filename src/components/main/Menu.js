@@ -11,9 +11,9 @@ class Menu extends Component {
             <section className='menu-display'>
 
                 <button className='hide-menu-button' onClick={hideMenu}>
-                    <div className='bar' id='bar-one'></div>
-                    <div className='bar' id='bar-two'></div>
-                    <div className='bar' id='bar-three'></div>
+                    <div className='bar'></div>
+                    <div className='bar'></div>
+                    <div className='bar'></div>
                 </button>
 
                 <div className='menu-content'>

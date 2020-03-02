@@ -35,7 +35,7 @@ app.use(session({
 massive(CONNECTION_STRING)
 .then(db => {
     app.set('db', db);
-    app.set('transporter', transporter)
+    app.set('transporter', transporter);
     console.log('database connected');
     app.listen(port, () => {
         console.log(`Server running on ${port}`);

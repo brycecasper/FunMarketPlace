@@ -64,10 +64,10 @@ class Header extends Component {
         const {menu, searchResults, searching} = this.state;
         const mappedSearchResults = searchResults.map((products, i) => {
             return(
-                <div key={i}>
+                <section key={i}>
                     <img src={products.img} alt={products.name} className='search-img' />
-                    <div className='search-name'>{products.name}</div>
-                </div>
+                    <h1 className='search-name'>{products.name}</h1>
+                </section>
             )
         });
 
