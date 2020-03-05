@@ -1,3 +1,23 @@
+/* RESPONSIVE */
+@media(max-width: 375px){
+  .search-bar{
+    display: none;
+  }
+  .menu-button{
+    display: none;
+  }
+  .header-options{
+    margin-right: 30%;
+  }
+  .link{
+    margin-left: 20px;
+  }
+  .sidescroll-main {
+    display: none;
+  }
+}
+
+
 /* HEADER */
 .header-main {
   width: 100%;
