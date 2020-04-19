@@ -1,1 +1,0 @@
-select * from top_charts;

@@ -41,13 +41,6 @@ class HomeMain extends Component {
                 </div>
                 </Link>
 
-                <Link to='/music' className='link-sidescroll'>
-                <div className='scroll-content'>
-                    <div>Music</div>
-                    <img className='images-main' src='https://images.pexels.com/photos/995301/pexels-photo-995301.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' alt='music'></img>
-                </div>
-                </Link>
-
                 <div className='scroll-end'/>
 
             </section>

@@ -10,7 +10,6 @@ const port = SERVER_PORT;
 const authCtrl = require('./controllers/authCtrl');
 const cartCtrl = require('./controllers/cartCtrl');
 const productsCtrl = require('./controllers/productsCtrl');
-const musicCtrl = require('./controllers/musicCtrl');
 const paymentCtrl = require('./controllers/paymentCtrl');
 const nodemailer = require('nodemailer');
 
@@ -96,12 +95,3 @@ app.get('/api/clothing', productsCtrl.getClothing);
 app.get('/api/home', productsCtrl.getHome);
 app.get('/api/outdoor', productsCtrl.getOutdoor);
 app.post('/api/look', productsCtrl.search);
-
-//MUSIC
-app.get('/api/songs', musicCtrl.getSongs);
-app.get('/api/albums', musicCtrl.getAlbums);
-app.get('/api/artists', musicCtrl.getArtists);
-app.get('/api/featured', musicCtrl.getFeatured);
-app.get('/api/discover', musicCtrl.getDiscover);
-app.get('/api/top', musicCtrl.getTop);
-app.get('/api/queue', musicCtrl.getQueue);

@@ -8,7 +8,6 @@ import Electronics from './components/electronics/Electronics';
 import Clothing from './components/clothing/Clothing';
 import HomeShop from './components/home-shop/HomeShop';
 import Outdoor from './components/outdoor/Outdoor';
-import Music from './components/music/Music';
 
 export default (
     <Switch>
@@ -20,6 +19,5 @@ export default (
         <Route path='/clothing' component={Clothing} />
         <Route path='/homeshop' component={HomeShop} />
         <Route path='/outdoor' component={Outdoor} />
-        <Route path='/music' component={Music} />
     </Switch>
 )
