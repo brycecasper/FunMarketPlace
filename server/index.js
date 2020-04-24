@@ -31,15 +31,21 @@ app.use(session({
     cookie: {maxAge: 1000 * 60 * 60 * 60}
 }));
 
-massive(CONNECTION_STRING)
-.then(db => {
-    app.set('db', db);
-    app.set('transporter', transporter);
-    console.log('database connected');
-    app.listen(port, () => {
-        console.log(`Server running on ${port}`);
-    })
+massive({
+  connectionString: CONNECTION_STRING,
+  ssl: {
+      rejectUnauthorized: false
+  }
 })
+.then(db => {
+  app.set('db', db);
+  app.set('transporter', transporter);
+  console.log('database connected');
+  app.listen(port, () => {
+      console.log(`Server running on ${port}`);
+  })
+})
+.catch(err => console.log(err));
 
 //ENDPOINTS
 
