@@ -9,15 +9,19 @@ const Login = props => {
 
     const login = () => {
         axios.post('/auth/login', {email: emailInput, password: passwordInput})
-        .then(res => {props.getUser(res.data)
-        props.history.push('/homemain')})
-        .catch(err => {window.alert('Email/password incorrect')});
+        .then(res => {
+            props.getUser(res.data)
+            props.history.push('/homemain')
+        })
+        .catch(err => window.alert('Email/password incorrect'));
     }
     
     const register = () => {
         axios.post('/auth/register', {email: emailInput, password: passwordInput})
-        .then(res => {props.getUser(res.data)
-        window.alert('Register accepted, please login')})
+        .then(res => {
+            props.getUser(res.data)
+            props.history.push('/homemain')
+        })
         .catch(err => {window.alert('Email/password exists')});
     }
 
